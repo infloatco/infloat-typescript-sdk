@@ -14,7 +14,7 @@ export const BodyCreateChatbotApiV1ChatbotPost: core.serialization.ObjectSchema<
 });
 
 export declare namespace BodyCreateChatbotApiV1ChatbotPost {
-    export interface Raw {
+    interface Raw {
         chatbot_name: string;
     }
 }

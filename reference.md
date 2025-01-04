@@ -1,10 +1,25 @@
 # Reference
 
-## Auth
+## auth
 
 <details><summary><code>client.auth.<a href="/src/api/resources/auth/client/Client.ts">login</a>({ ...params }) -> InfloatApi.Token</code></summary>
 <dl>
 <dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Login a user with email and password or OAuth provider.
+
+</dd>
+</dl>
+</dd>
+</dl>
 
 #### 🔌 Usage
 
@@ -57,6 +72,21 @@ await client.auth.login({
 <dl>
 <dd>
 
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+OAuth callback for Google login.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
 #### 🔌 Usage
 
 <dl>
@@ -96,6 +126,21 @@ await client.auth.authCallback();
 <details><summary><code>client.auth.<a href="/src/api/resources/auth/client/Client.ts">registerUser</a>({ ...params }) -> InfloatApi.UserResponse</code></summary>
 <dl>
 <dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Register a new user.
+
+</dd>
+</dl>
+</dd>
+</dl>
 
 #### 🔌 Usage
 
@@ -149,6 +194,21 @@ await client.auth.registerUser({
 <dl>
 <dd>
 
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Delete the current user.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
 #### 🔌 Usage
 
 <dl>
@@ -189,6 +249,21 @@ await client.auth.deleteUser();
 <dl>
 <dd>
 
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Logout the current user.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
 #### 🔌 Usage
 
 <dl>
@@ -225,9 +300,9 @@ await client.auth.logout();
 </dl>
 </details>
 
-## Crawler
+## ingestion
 
-<details><summary><code>client.crawler.<a href="/src/api/resources/crawler/client/Client.ts">crawlWebsite</a>({ ...params }) -> InfloatApi.WebsiteIngestionResponse</code></summary>
+<details><summary><code>client.ingestion.<a href="/src/api/resources/ingestion/client/Client.ts">crawlWebsite</a>({ ...params }) -> InfloatApi.WebsiteIngestionResponse</code></summary>
 <dl>
 <dd>
 
@@ -239,7 +314,7 @@ await client.auth.logout();
 <dl>
 <dd>
 
-Start a website crawl.
+Ingest a website
 
 </dd>
 </dl>
@@ -255,7 +330,7 @@ Start a website crawl.
 <dd>
 
 ```typescript
-await client.crawler.crawlWebsite({
+await client.ingestion.crawlWebsite({
     url: "url",
     chatbotId: "chatbot_id",
 });
@@ -282,7 +357,7 @@ await client.crawler.crawlWebsite({
 <dl>
 <dd>
 
-**requestOptions:** `Crawler.RequestOptions`
+**requestOptions:** `Ingestion.RequestOptions`
 
 </dd>
 </dl>
@@ -293,9 +368,24 @@ await client.crawler.crawlWebsite({
 </dl>
 </details>
 
-<details><summary><code>client.crawler.<a href="/src/api/resources/crawler/client/Client.ts">ingestYoutube</a>({ ...params }) -> InfloatApi.YoutubeTranscript</code></summary>
+<details><summary><code>client.ingestion.<a href="/src/api/resources/ingestion/client/Client.ts">ingestYoutube</a>({ ...params }) -> InfloatApi.YoutubeTranscript</code></summary>
 <dl>
 <dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Ingest a YouTube video
+
+</dd>
+</dl>
+</dd>
+</dl>
 
 #### 🔌 Usage
 
@@ -306,7 +396,7 @@ await client.crawler.crawlWebsite({
 <dd>
 
 ```typescript
-await client.crawler.ingestYoutube({
+await client.ingestion.ingestYoutube({
     url: "url",
     chatbotId: "chatbot_id",
 });
@@ -333,7 +423,7 @@ await client.crawler.ingestYoutube({
 <dl>
 <dd>
 
-**requestOptions:** `Crawler.RequestOptions`
+**requestOptions:** `Ingestion.RequestOptions`
 
 </dd>
 </dl>
@@ -344,9 +434,24 @@ await client.crawler.ingestYoutube({
 </dl>
 </details>
 
-<details><summary><code>client.crawler.<a href="/src/api/resources/crawler/client/Client.ts">uploadDocument</a>(file, { ...params }) -> InfloatApi.FilePathResponse</code></summary>
+<details><summary><code>client.ingestion.<a href="/src/api/resources/ingestion/client/Client.ts">uploadDocument</a>(file, { ...params }) -> InfloatApi.FilePathResponse</code></summary>
 <dl>
 <dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Upload a document
+
+</dd>
+</dl>
+</dd>
+</dl>
 
 #### 🔌 Usage
 
@@ -357,7 +462,7 @@ await client.crawler.ingestYoutube({
 <dd>
 
 ```typescript
-await client.crawler.uploadDocument(fs.createReadStream("/path/to/your/file"), {
+await client.ingestion.uploadDocument(fs.createReadStream("/path/to/your/file"), {
     chatbotId: "chatbot_id",
 });
 ```
@@ -391,7 +496,7 @@ await client.crawler.uploadDocument(fs.createReadStream("/path/to/your/file"), {
 <dl>
 <dd>
 
-**requestOptions:** `Crawler.RequestOptions`
+**requestOptions:** `Ingestion.RequestOptions`
 
 </dd>
 </dl>
@@ -402,7 +507,7 @@ await client.crawler.uploadDocument(fs.createReadStream("/path/to/your/file"), {
 </dl>
 </details>
 
-## Chatbot
+## chatbot
 
 <details><summary><code>client.chatbot.<a href="/src/api/resources/chatbot/client/Client.ts">chatbot</a>({ ...params }) -> unknown</code></summary>
 <dl>
@@ -434,6 +539,7 @@ Check if the current user has access to the chatbot.
 ```typescript
 await client.chatbot.chatbot({
     uniqueCode: "unique_code",
+    query: "query",
 });
 ```
 
@@ -601,13 +707,12 @@ await client.chatbot.createChatbot({
 <dl>
 <dd>
 
-Fetch chatbots with optional filters:
+Fetch chatbots with optional filters.
 
-- `id`: Fetch a specific chatbot by its ID.
-  </dd>
-  </dl>
-  </dd>
-  </dl>
+</dd>
+</dl>
+</dd>
+</dl>
 
 #### 🔌 Usage
 
@@ -779,6 +884,98 @@ await client.chatbot.deleteChatbot("chatbot_id");
 <dd>
 
 **requestOptions:** `Chatbot.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+## Token
+
+<details><summary><code>client.token.<a href="/src/api/resources/token/client/Client.ts">verifyEmail</a>({ ...params }) -> unknown</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.token.verifyEmail({
+    token: "token",
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `InfloatApi.VerifyEmailApiV1TokenVerifyEmailGetRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Token.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.token.<a href="/src/api/resources/token/client/Client.ts">resendVerification</a>() -> unknown</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.token.resendVerification();
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**requestOptions:** `Token.RequestOptions`
 
 </dd>
 </dl>

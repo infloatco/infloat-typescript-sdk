@@ -2,11 +2,11 @@ import { RUNTIME } from "../runtime";
 
 export type MaybePromise<T> = Promise<T> | T;
 
-interface FormDataRequest<Body> {
+type FormDataRequest<Body> = {
     body: Body;
     headers: Record<string, string>;
     duplex?: "half";
-}
+};
 
 function isNamedValue(value: unknown): value is { name: string } {
     return typeof value === "object" && value != null && "name" in value;
@@ -60,9 +60,7 @@ export class Node18FormData implements CrossPlatformFormData {
             fileName = value.name;
         }
 
-        if (value instanceof Blob) {
-            this.fd?.append(key, value, fileName);
-        } else {
+        if (value instanceof (await import("stream")).Readable) {
             this.fd?.append(key, {
                 type: undefined,
                 name: fileName,
@@ -71,13 +69,15 @@ export class Node18FormData implements CrossPlatformFormData {
                     return value;
                 },
             });
+        } else {
+            this.fd?.append(key, value, fileName);
         }
     }
 
     public async getRequest(): Promise<FormDataRequest<unknown>> {
         const encoder = new (await import("form-data-encoder")).FormDataEncoder(this.fd as any);
         return {
-            body: (await import("readable-stream")).Readable.from(encoder),
+            body: await (await import("stream")).Readable.from(encoder),
             headers: encoder.headers,
             duplex: "half",
         };
@@ -97,7 +97,7 @@ export type Node16FormDataFd =
                         filename?: string;
                         filepath?: string;
                         contentType?: string;
-                    },
+                    }
           ): void;
 
           getHeaders(): Record<string, string>;
@@ -124,7 +124,7 @@ export class Node16FormData implements CrossPlatformFormData {
         }
 
         let bufferedValue;
-        if (value instanceof Blob) {
+        if (!(value instanceof (await import("stream")).Readable)) {
             bufferedValue = Buffer.from(await (value as any).arrayBuffer());
         } else {
             bufferedValue = value;

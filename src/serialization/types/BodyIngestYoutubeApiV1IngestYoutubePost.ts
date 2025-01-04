@@ -15,7 +15,7 @@ export const BodyIngestYoutubeApiV1IngestYoutubePost: core.serialization.ObjectS
 });
 
 export declare namespace BodyIngestYoutubeApiV1IngestYoutubePost {
-    export interface Raw {
+    interface Raw {
         url: string;
         chatbot_id: string;
     }

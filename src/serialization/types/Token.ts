@@ -14,7 +14,7 @@ export const Token: core.serialization.ObjectSchema<serializers.Token.Raw, Inflo
     });
 
 export declare namespace Token {
-    export interface Raw {
+    interface Raw {
         access_token: string;
         refresh_token: string;
         token_type: string;

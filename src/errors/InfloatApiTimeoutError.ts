@@ -3,8 +3,8 @@
  */
 
 export class InfloatApiTimeoutError extends Error {
-    constructor(message: string) {
-        super(message);
+    constructor() {
+        super("Timeout");
         Object.setPrototypeOf(this, InfloatApiTimeoutError.prototype);
     }
 }

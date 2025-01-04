@@ -19,7 +19,7 @@ export const DocumentResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace DocumentResponse {
-    export interface Raw {
+    interface Raw {
         id: string;
         chatbot_id: string;
         url?: string | null;

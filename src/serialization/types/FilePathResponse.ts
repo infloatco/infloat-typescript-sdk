@@ -15,7 +15,7 @@ export const FilePathResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace FilePathResponse {
-    export interface Raw {
+    interface Raw {
         path: string;
         message: string;
     }

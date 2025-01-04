@@ -18,7 +18,7 @@ export const ChatbotResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace ChatbotResponse {
-    export interface Raw {
+    interface Raw {
         id: string;
         name: string;
         user_id: string;

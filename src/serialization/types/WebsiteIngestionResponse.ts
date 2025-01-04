@@ -16,7 +16,7 @@ export const WebsiteIngestionResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace WebsiteIngestionResponse {
-    export interface Raw {
+    interface Raw {
         message: string;
         url: string;
         max_depth: number;

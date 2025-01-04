@@ -14,7 +14,7 @@ export const BodyUpdateChatbotApiV1ChatbotChatbotIdPut: core.serialization.Objec
 });
 
 export declare namespace BodyUpdateChatbotApiV1ChatbotChatbotIdPut {
-    export interface Raw {
+    interface Raw {
         name: string;
     }
 }

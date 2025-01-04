@@ -15,7 +15,7 @@ export const LoginSchema: core.serialization.Schema<
 });
 
 export declare namespace LoginSchema {
-    export interface Raw {
+    interface Raw {
         email: string;
         password: string;
     }

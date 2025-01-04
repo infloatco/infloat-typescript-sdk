@@ -16,7 +16,7 @@ export const WebsiteIngestionRequest: core.serialization.Schema<
 });
 
 export declare namespace WebsiteIngestionRequest {
-    export interface Raw {
+    interface Raw {
         url: string;
         chatbot_id: string;
         max_depth?: number | null;

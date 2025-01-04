@@ -15,7 +15,7 @@ export const HttpValidationError: core.serialization.ObjectSchema<
 });
 
 export declare namespace HttpValidationError {
-    export interface Raw {
+    interface Raw {
         detail?: ValidationError.Raw[] | null;
     }
 }

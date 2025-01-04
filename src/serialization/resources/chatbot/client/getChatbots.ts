@@ -13,5 +13,5 @@ export const Response: core.serialization.Schema<
 > = core.serialization.list(ChatbotResponse);
 
 export declare namespace Response {
-    export type Raw = ChatbotResponse.Raw[];
+    type Raw = ChatbotResponse.Raw[];
 }

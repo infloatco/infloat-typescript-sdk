@@ -15,7 +15,7 @@ export const YoutubeTranscript: core.serialization.ObjectSchema<
 });
 
 export declare namespace YoutubeTranscript {
-    export interface Raw {
+    interface Raw {
         transcript: string;
         video_id: string;
     }

@@ -5,9 +5,11 @@
 /**
  * @example
  *     {
- *         uniqueCode: "unique_code"
+ *         uniqueCode: "unique_code",
+ *         query: "query"
  *     }
  */
 export interface ChatbotApiV1ChatbotChatCompletionsGetRequest {
     uniqueCode: string;
+    query: string;
 }

@@ -14,7 +14,7 @@ export const UserCreate: core.serialization.Schema<serializers.UserCreate.Raw, I
     });
 
 export declare namespace UserCreate {
-    export interface Raw {
+    interface Raw {
         username: string;
         email: string;
         password: string;

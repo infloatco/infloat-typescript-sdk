@@ -12,7 +12,7 @@ export const UserResponse: core.serialization.ObjectSchema<serializers.UserRespo
     });
 
 export declare namespace UserResponse {
-    export interface Raw {
+    interface Raw {
         id: string;
     }
 }
