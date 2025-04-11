@@ -1,6 +1,6 @@
 {
     "name": "infloat-ts",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "private": false,
     "repository": "https://github.com/infloatco/infloat-typescript-sdk",
     "main": "./index.js",
@@ -17,7 +17,6 @@
         "formdata-node": "^6.0.3",
         "node-fetch": "2.7.0",
         "qs": "6.11.2",
-        "js-base64": "3.7.2",
         "form-data-encoder": "^4.0.2"
     },
     "devDependencies": {

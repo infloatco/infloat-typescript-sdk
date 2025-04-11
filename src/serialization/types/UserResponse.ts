@@ -9,10 +9,16 @@ import * as core from "../../core";
 export const UserResponse: core.serialization.ObjectSchema<serializers.UserResponse.Raw, InfloatApi.UserResponse> =
     core.serialization.object({
         id: core.serialization.string(),
+        name: core.serialization.string(),
+        email: core.serialization.string(),
+        createdAt: core.serialization.property("created_at", core.serialization.date()),
     });
 
 export declare namespace UserResponse {
     interface Raw {
         id: string;
+        name: string;
+        email: string;
+        created_at: string;
     }
 }

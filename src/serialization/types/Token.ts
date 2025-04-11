@@ -9,14 +9,12 @@ import * as core from "../../core";
 export const Token: core.serialization.ObjectSchema<serializers.Token.Raw, InfloatApi.Token> =
     core.serialization.object({
         accessToken: core.serialization.property("access_token", core.serialization.string()),
-        refreshToken: core.serialization.property("refresh_token", core.serialization.string()),
         tokenType: core.serialization.property("token_type", core.serialization.string()),
     });
 
 export declare namespace Token {
     interface Raw {
         access_token: string;
-        refresh_token: string;
         token_type: string;
     }
 }

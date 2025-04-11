@@ -22,8 +22,9 @@ Instantiate and use the client with the following:
 ```typescript
 import { InfloatApiClient } from "infloat-ts";
 
-const client = new InfloatApiClient({ token: "YOUR_TOKEN" });
-await client.auth.login({
+const client = new InfloatApiClient({ environment: "YOUR_BASE_URL" });
+await client.registerUserAuthRegisterPost({
+    name: "name",
     email: "email",
     password: "password",
 });
@@ -37,7 +38,7 @@ following namespace:
 ```typescript
 import { InfloatApi } from "infloat-ts";
 
-const request: InfloatApi.LoginSchema = {
+const request: InfloatApi.UserCreate = {
     ...
 };
 ```
@@ -51,7 +52,7 @@ will be thrown.
 import { InfloatApiError } from "infloat-ts";
 
 try {
-    await client.auth.login(...);
+    await client.registerUserAuthRegisterPost(...);
 } catch (err) {
     if (err instanceof InfloatApiError) {
         console.log(err.statusCode);
@@ -78,7 +79,7 @@ A request is deemed retriable when any of the following HTTP status codes is ret
 Use the `maxRetries` request option to configure this behavior.
 
 ```typescript
-const response = await client.auth.login(..., {
+const response = await client.registerUserAuthRegisterPost(..., {
     maxRetries: 0 // override maxRetries at the request level
 });
 ```
@@ -88,7 +89,7 @@ const response = await client.auth.login(..., {
 The SDK defaults to a 60 second timeout. Use the `timeoutInSeconds` option to configure this behavior.
 
 ```typescript
-const response = await client.auth.login(..., {
+const response = await client.registerUserAuthRegisterPost(..., {
     timeoutInSeconds: 30 // override timeout to 30s
 });
 ```
@@ -99,7 +100,7 @@ The SDK allows users to abort requests at any point by passing in an abort signa
 
 ```typescript
 const controller = new AbortController();
-const response = await client.auth.login(..., {
+const response = await client.registerUserAuthRegisterPost(..., {
     abortSignal: controller.signal
 });
 controller.abort(); // aborts the request
